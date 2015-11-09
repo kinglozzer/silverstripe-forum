@@ -462,6 +462,7 @@ class ForumMemberProfile extends Page_Controller {
 		if($member && $member->hasMethod('canEdit') && $member->canEdit()) {
 			$member->Password = '';
 			$form->loadDataFrom($member);
+			$this->extend('updateEditProfileForm', $form);
 			return $form;
 		}
 
